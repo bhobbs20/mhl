@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <section class="dark-grey-text">
+            <h2 class="text-center font-weight-bold mb-4 pb-2">MHL 2020 Teams</h2>
+            <div class="row ">
+                <div class="col-lg-6">
+                    {% for team in east_teams %}
+                    <div class="col-md-12 mb-5">
+                        <div class="card mt-4" style="display: flex; flex-direction: row;" >
+                            <a href="">
+                            <img src="{{ team.team.logo.url }}" alt="" class="card-img img-fluid" style="width:100px; height: 120px;">
+                            </a>
+
+                                <div class="card-body">
+                                    <h2 class="card-title ml-5">{{ team.team.name}}</h2>
+                                    <p class="card-text ml-5">{{ team.wins }} - {{ team.loss }} - {{ team.points }}</p>
+                                </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-6">
+                     {% for team in west_teams %}
+                    <div class="col-md-12 mb-5">
+                        <div class="card mt-4" style="display: flex; flex-direction: row;" >
+                            <a href="}">
+                            <img src="{{ team.team.logo.url }}" alt="" class="card-img img-fluid" style="width:100px; height: 120px;">
+                            </a>
+
+                                <div class="card-body">
+                                    <h2 class="card-title ml-5">{{ team.team.name}}</h2>
+                                    <p class="card-text ml-5">{{ team.wins }} - {{ team.loss }} - {{ team.points }}</p>
+                                </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

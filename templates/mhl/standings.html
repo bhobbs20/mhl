@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h2 class="card-title text-center mt-3">League Standings</h2>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Wins</th>
+                                    <th scope="col">Losses</th>
+                                    <th scope="col">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for team in all_teams %}
+                                <tr>
+                                    <th>{{ team.team.name }}</th>
+                                    <td>{{ team.wins }}</td>
+                                    <td>{{ team.loss }}</td>
+                                    <td>{{ team.points }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card mt-5">
+                    <h2 class="card-title text-center mt-3">East Standings</h2>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Wins</th>
+                                    <th scope="col">Losses</th>
+                                    <th scope="col">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for team in east_teams %}
+                                <tr>
+                                    <th>{{ team.team.name }}</th>
+                                    <td>{{ team.wins }}</td>
+                                    <td>{{ team.loss }}</td>
+                                    <td>{{ team.points }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card mt-5">
+                    <h2 class="card-title text-center mt-3">West Standings</h2>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Wins</th>
+                                    <th scope="col">Losses</th>
+                                    <th scope="col">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for team in west_teams %}
+                                <tr>
+                                    <th>{{ team.team.name }}</th>
+                                    <td>{{ team.wins }}</td>
+                                    <td>{{ team.loss }}</td>
+                                    <td>{{ team.points }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

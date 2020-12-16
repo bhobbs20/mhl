@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <h2 class="card-title text-center mt-3">Season 1 Schedule</h2>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Season</th>
+                                <th scope="col">Home</th>
+                                <th scope="col">Away</th>
+                                <th scope="col">Play</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for game in league_games  %}
+                            <tr>
+                                <th>{{ game.season.name }}</th>
+                                <td>{{ game.home_team.name }}</td>
+                                <td>{{ game.away_team.name }} </td>
+                                <td> <btn class="btn-primary px-3">Play</btn></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+{% endblock %}
